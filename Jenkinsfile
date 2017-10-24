@@ -9,8 +9,8 @@ pipeline {
             
           },
           "Build": {
-            bat 'cd example'
-            bat 'mvn install'
+            sh '''cd example
+mvn install'''
             
           }
         )
