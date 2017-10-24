@@ -1,9 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('Build') {
+    stage('Pre Build') {
       steps {
-        echo 'Building'
+        parallel(
+          "Pre Build": {
+            echo 'Building'
+            
+          },
+          "Build": {
+            bat 'cd example'
+            bat 'mvn install'
+            
+          }
+        )
       }
     }
   }
