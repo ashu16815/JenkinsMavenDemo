@@ -10,7 +10,7 @@ pipeline {
           },
           "Build": {
             sh '''cd example
-mvn clean install'''
+'''
             
           },
           "Post Build": {
